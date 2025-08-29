@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>DRSALEEM</title>
+
+    <!-- PWA additions -->
+    <link rel="manifest" href="/manifest.json" />
+    <meta name="theme-color" content="#0ea5e9" />
+    <link rel="apple-touch-icon" href="/icons/icon-192x192.png">
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              primary: 'var(--primary-color, #0ea5e9)', // sky-500
+              secondary: 'var(--secondary-color, #0d9488)', // teal-600
+              light: 'var(--light-color, #f0f9ff)', // sky-50
+              dark: 'var(--dark-color, #082f49)', // sky-950
+            },
+          },
+        },
+      }
+    </script>
+    <style>
+      @keyframes fade-in-up {
+        from {
+          opacity: 0;
+          transform: translateY(20px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+      .animate-fade-in-up {
+        animation: fade-in-up 0.3s ease-out forwards;
+      }
+    </style>
+  <script type="importmap">
+{
+  "imports": {
+    "react": "https://esm.sh/react@^19.1.1",
+    "react-dom/": "https://esm.sh/react-dom@^19.1.1/",
+    "react/": "https://esm.sh/react@^19.1.1/",
+    "recharts": "https://esm.sh/recharts@^3.1.2",
+    "vite": "https://esm.sh/vite@^7.1.3",
+    "@vitejs/plugin-react": "https://esm.sh/@vitejs/plugin-react@^5.0.1",
+    "@google/genai": "https://esm.sh/@google/genai"
+  }
+}
+</script>
+</head>
+  <body class="bg-sky-50 text-slate-800">
+    <div id="root"></div>
+    <script>
+      if ('serviceWorker' in navigator) {
+        window.addEventListener('load', () => {
+          navigator.serviceWorker.register('/sw.js').then(registration => {
+            console.log('ServiceWorker registration successful with scope: ', registration.scope);
+          }, err => {
+            console.log('ServiceWorker registration failed: ', err);
+          });
+        });
+      }
+    </script>
+    <script type="module" src="/src/index.tsx"></script>
+  </body>
+</html>

@@ -1,0 +1,24 @@
+{
+  "short_name": "DrSaleem",
+  "name": "DRSALEEM Dental Clinic",
+  "description": "An all-in-one management application for Dr. Saleem's dental clinic to track appointments, income, and expenditures.",
+  "icons": [
+    {
+      "src": "/icons/icon-192x192.png",
+      "type": "image/png",
+      "sizes": "192x192",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/icons/icon-512x512.png",
+      "type": "image/png",
+      "sizes": "512x512",
+      "purpose": "any maskable"
+    }
+  ],
+  "start_url": ".",
+  "display": "standalone",
+  "theme_color": "#0ea5e9",
+  "background_color": "#f0f9ff",
+  "orientation": "portrait-primary"
+}
